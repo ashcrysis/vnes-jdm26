@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8141164296234163085}
   - component: {fileID: 6905989105852023242}
   - component: {fileID: 5993645645189570845}
+  - component: {fileID: 6457414027684214230}
   m_Layer: 3
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -110,6 +111,7 @@ MonoBehaviour:
   moveSpeed: 5
   floorTilemap: {fileID: 0}
   playerColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 0}
 --- !u!50 &8141164296234163085
 Rigidbody2D:
   serializedVersion: 5
@@ -301,3 +303,25 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &6457414027684214230
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192621544060455248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f37a448448e6f54a8f44e2908d9a9d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

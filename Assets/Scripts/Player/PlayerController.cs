@@ -1,4 +1,4 @@
-using Tile;
+using Tiles;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
@@ -16,12 +16,14 @@ namespace Player
         [Header("Player")]
         public Color playerColor;
 
+        [Header("Animator")]
+        public Animator animator;
+
         private Vector2 moveInput;
         private TileBase playerTile;
         private Rigidbody2D rb;
         private PlayerInput playerInput;
 
-        // Cores fixas para até 4 jogadores
         private static readonly Color[] playerColors = new Color[]
         {
             Color.red, Color.blue, Color.green, Color.yellow
@@ -32,18 +34,24 @@ namespace Player
             rb = GetComponent<Rigidbody2D>();
             playerInput = GetComponent<PlayerInput>();
 
-            if (floorTilemap == null)
-                floorTilemap = GameObject.Find("FloorTilemap").GetComponent<Tilemap>();
+            playerInput.actions["Move"].performed += OnMove;
+            playerInput.actions["Move"].canceled += OnMove;
 
-            // Define cor do jogador pelo playerIndex
             int index = Mathf.Clamp(playerInput.playerIndex, 0, playerColors.Length - 1);
             playerColor = playerColors[index];
 
-            // Cria tile colorido
-            playerTile = ScriptableTile.CreateTile(playerColor);
+            if (floorTilemap == null)
+                floorTilemap = GameObject.Find("FloorTilemap")?.GetComponent<Tilemap>();
+
+            if (floorTilemap == null)
+            {
+                Debug.LogError("FloorTilemap não encontrado na cena!");
+                return;
+            }
+
+            playerTile = ScriptableTile.CreateTile(playerColor, floorTilemap);
         }
 
-        // Chamado pelo PlayerInput → Move
         public void OnMove(InputAction.CallbackContext context)
         {
             moveInput = context.ReadValue<Vector2>();
@@ -58,6 +66,26 @@ namespace Player
             // Marca tile
             Vector3Int cellPos = floorTilemap.WorldToCell(rb.position);
             floorTilemap.SetTile(cellPos, playerTile);
+        }
+
+        void Update()
+        {
+            UpdateAnimator();
+        }
+
+        private void UpdateAnimator()
+        {
+            if (animator == null) return;
+
+            // Clamp entre -1 e 1 (normalizado)
+            Vector2 normalized = moveInput;
+            if (normalized.magnitude > 1f)
+                normalized.Normalize();
+
+            // Passa para o Animator
+            animator.SetFloat("x", normalized.x);
+            animator.SetFloat("y", normalized.y);
+            animator.SetBool("isMoving", moveInput.sqrMagnitude > 0.01f);
         }
     }
 }
