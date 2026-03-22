@@ -29,6 +29,8 @@ namespace Player
         private TileBase playerTile;
         private Rigidbody2D rb;
         private PlayerInput playerInput;
+
+        private int playerIndex;
         
         private bool _initialized;
         
@@ -41,6 +43,9 @@ namespace Player
             playerInput.actions["Move"].canceled += OnMove;
 
             int index = Mathf.Clamp(playerInput.playerIndex, 0, GameSettings.Instance.GetMaxPlayers - 1);
+            
+            playerIndex = index;
+            
             transform.position = GameSettings.Instance.GetSpawnPoint(index).position;
             playerColor = GameSettings.Instance.GetTeamColor(index);
             
@@ -114,6 +119,11 @@ namespace Player
             animator.SetFloat("y", normalized.y);
             animator.SetBool("isMoving", moveInput.sqrMagnitude > 0.01f);
             // animator.SetBool("isMoving", true);
+        }
+
+        public void Die()
+        {
+            transform.position = GameSettings.Instance.GetSpawnPoint(playerIndex).position;
         }
     }
 }
