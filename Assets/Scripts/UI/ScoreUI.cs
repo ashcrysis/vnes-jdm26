@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Data;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -57,9 +58,11 @@ namespace UI
             for (int i = 0; i < _teamsUIs.Count; i++)
             {
                 var ui = _teamsUIs[i];
-                var data = teams[i];
 
-                float percentage = data.score / (float)TotalTilesPainted;
+                int score = TilePaintManager.Instance.GetScore(i);
+                teams[i].score = score;
+
+                float percentage = score / (float)Mathf.Max(1, TotalTilesPainted);
                 ui.Rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, MaxWidth * percentage);
             }
         }
