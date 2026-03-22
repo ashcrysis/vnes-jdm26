@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Data;
 using Tiles;
 using UI;
@@ -29,11 +30,8 @@ namespace Player
         private Rigidbody2D rb;
         private PlayerInput playerInput;
         
-        public static readonly Color[] playerColors = new Color[]
-        {
-            Color.red, Color.blue, Color.green, Color.yellow
-        };
-
+        private bool _initialized;
+        
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -42,13 +40,14 @@ namespace Player
             playerInput.actions["Move"].performed += OnMove;
             playerInput.actions["Move"].canceled += OnMove;
 
-            int index = Mathf.Clamp(playerInput.playerIndex, 0, playerColors.Length - 1);
-            playerColor = playerColors[index];
-
-            if (floorTilemap == null)
+            int index = Mathf.Clamp(playerInput.playerIndex, 0, GameSettings.Instance.GetMaxPlayers - 1);
+            transform.position = GameSettings.Instance.GetSpawnPoint(index).position;
+            playerColor = GameSettings.Instance.GetTeamColor(index);
+            
+            if (!floorTilemap)
                 floorTilemap = GameObject.Find("FloorTilemap")?.GetComponent<Tilemap>();
 
-            if (floorTilemap == null)
+            if (!floorTilemap)
             {
                 Debug.LogError("FloorTilemap não encontrado na cena!");
                 return;
@@ -58,6 +57,16 @@ namespace Player
             
             ScoreUI.Instance.OnPlayerJoined();
             animator = GetComponent<Animator>();
+            
+            StartCoroutine(MarkAsInitialized());
+        }
+
+        public IEnumerator MarkAsInitialized()
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            
+            _initialized = true;
         }
 
         public void OnMove(InputAction.CallbackContext context)
@@ -71,6 +80,11 @@ namespace Player
 
         void FixedUpdate()
         {
+            if (!_initialized)
+            {
+                return;
+            }
+            
             // Movimento
             Vector2 newPos = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
             rb.MovePosition(newPos);

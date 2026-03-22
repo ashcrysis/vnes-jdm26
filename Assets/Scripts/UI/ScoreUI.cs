@@ -57,7 +57,7 @@ namespace UI
         {
             //create player data
             TeamData data = new TeamData();
-            Color color = PlayerController.playerColors[teams.Count];
+            Color color = GameSettings.Instance.GetTeamColor(teams.Count);
             data.color = color;
             teams.Add(data);
 
