@@ -21,6 +21,7 @@ namespace Player
         public Animator animator;
 
         private Vector2 moveInput;
+        private Vector2 lastFacedDirection = Vector2.down;
         private TileBase playerTile;
         private Rigidbody2D rb;
         private PlayerInput playerInput;
@@ -51,11 +52,16 @@ namespace Player
             }
 
             playerTile = ScriptableTile.CreateTile(playerColor, floorTilemap);
+            animator = GetComponent<Animator>();
         }
 
         public void OnMove(InputAction.CallbackContext context)
         {
             moveInput = context.ReadValue<Vector2>();
+            if (moveInput.sqrMagnitude > 0.01f)
+            {
+                lastFacedDirection = moveInput;
+            }
         }
 
         void FixedUpdate()
@@ -80,7 +86,7 @@ namespace Player
             if (animator == null) return;
 
             // Clamp entre -1 e 1 (normalizado)
-            Vector2 normalized = moveInput;
+            Vector2 normalized = lastFacedDirection;
             if (normalized.magnitude > 1f)
                 normalized.Normalize();
 
@@ -88,6 +94,7 @@ namespace Player
             animator.SetFloat("x", normalized.x);
             animator.SetFloat("y", normalized.y);
             animator.SetBool("isMoving", moveInput.sqrMagnitude > 0.01f);
+            // animator.SetBool("isMoving", true);
         }
     }
 }
