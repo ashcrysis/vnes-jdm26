@@ -1,0 +1,641 @@
+fileFormatVersion: 2
+guid: 353a273a981e25a4cbeae6cbfbfefa5f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6572239841692305038
+    second: ChapeuLaranja_0
+  - first:
+      213: -651368482642872014
+    second: ChapeuLaranja_1
+  - first:
+      213: 6562973683717253581
+    second: ChapeuLaranja_2
+  - first:
+      213: -7097575536437911560
+    second: ChapeuLaranja_3
+  - first:
+      213: 7066598673302802185
+    second: ChapeuLaranja_4
+  - first:
+      213: -2834775582881278537
+    second: ChapeuLaranja_5
+  - first:
+      213: 5088277945478820346
+    second: ChapeuLaranja_6
+  - first:
+      213: -8233321928872046748
+    second: ChapeuLaranja_7
+  - first:
+      213: 3996105903704763552
+    second: ChapeuLaranja_8
+  - first:
+      213: -7729937451572415248
+    second: ChapeuLaranja_9
+  - first:
+      213: -4686346746690533544
+    second: ChapeuLaranja_10
+  - first:
+      213: -8392165351113363106
+    second: ChapeuLaranja_11
+  - first:
+      213: -8600690930553375077
+    second: ChapeuLaranja_12
+  - first:
+      213: 568595945033610277
+    second: ChapeuLaranja_13
+  - first:
+      213: -2151031400803904011
+    second: ChapeuLaranja_14
+  - first:
+      213: 7873646892511042717
+    second: ChapeuLaranja_15
+  - first:
+      213: 8163391473003785535
+    second: ChapeuLaranja_16
+  - first:
+      213: -6484854425281093997
+    second: ChapeuLaranja_17
+  - first:
+      213: 5143389635865794581
+    second: ChapeuLaranja_18
+  - first:
+      213: 1554295288693923065
+    second: ChapeuLaranja_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ChapeuLaranja_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 279b2496fa6bac4a0800000000000000
+      internalID: -6572239841692305038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 180
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239bf2ee0dfd5f6f0800000000000000
+      internalID: -651368482642872014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 180
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc924301bcd541b50800000000000000
+      internalID: 6562973683717253581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 180
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff9d1877a8508d90800000000000000
+      internalID: -7097575536437911560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90fc57c8d0a911260800000000000000
+      internalID: 7066598673302802185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 135
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5196c60aad8a8d0800000000000000
+      internalID: -2834775582881278537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 135
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af138b225d13d9640800000000000000
+      internalID: 5088277945478820346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_7
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 135
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46fc524e35d5dbd80800000000000000
+      internalID: -8233321928872046748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ace92ba525057730800000000000000
+      internalID: 3996105903704763552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_9
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 90
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4b90fb7deb9b490800000000000000
+      internalID: -7729937451572415248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_10
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 90
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85704359670c6feb0800000000000000
+      internalID: -4686346746690533544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_11
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 90
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e51fb86a31a098b80800000000000000
+      internalID: -8392165351113363106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 45
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b963175ca2534a880800000000000000
+      internalID: -8600690930553375077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_13
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 45
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524b47cdffe04e700800000000000000
+      internalID: 568595945033610277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_14
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 45
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f55f5e66500622e0800000000000000
+      internalID: -2151031400803904011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_15
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 45
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c9af2e120d44d60800000000000000
+      internalID: 7873646892511042717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3de7de0b413a4170800000000000000
+      internalID: 8163391473003785535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_17
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39e1009224b2106a0800000000000000
+      internalID: -6484854425281093997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_18
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518d43b7f9df06740800000000000000
+      internalID: 5143389635865794581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChapeuLaranja_19
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 0
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fc1aae7457f19510800000000000000
+      internalID: 1554295288693923065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3db30f9e680f76a49b606165b5c39bdf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":5.0},"gridSpriteSize":{"x":39.0,"y":45.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ChapeuLaranja_0: -6572239841692305038
+      ChapeuLaranja_1: -651368482642872014
+      ChapeuLaranja_10: -4686346746690533544
+      ChapeuLaranja_11: -8392165351113363106
+      ChapeuLaranja_12: -8600690930553375077
+      ChapeuLaranja_13: 568595945033610277
+      ChapeuLaranja_14: -2151031400803904011
+      ChapeuLaranja_15: 7873646892511042717
+      ChapeuLaranja_16: 8163391473003785535
+      ChapeuLaranja_17: -6484854425281093997
+      ChapeuLaranja_18: 5143389635865794581
+      ChapeuLaranja_19: 1554295288693923065
+      ChapeuLaranja_2: 6562973683717253581
+      ChapeuLaranja_3: -7097575536437911560
+      ChapeuLaranja_4: 7066598673302802185
+      ChapeuLaranja_5: -2834775582881278537
+      ChapeuLaranja_6: 5088277945478820346
+      ChapeuLaranja_7: -8233321928872046748
+      ChapeuLaranja_8: 3996105903704763552
+      ChapeuLaranja_9: -7729937451572415248
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
