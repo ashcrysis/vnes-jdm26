@@ -1,3 +1,4 @@
+using Data;
 using Tiles;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -66,6 +67,7 @@ namespace Player
             // Marca tile
             Vector3Int cellPos = floorTilemap.WorldToCell(rb.position);
             floorTilemap.SetTile(cellPos, playerTile);
+            TilePaintManager.Instance.PaintTile(cellPos, playerInput.playerIndex);
         }
 
         void Update()
