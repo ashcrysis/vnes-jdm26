@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -16,12 +17,10 @@ namespace UI
     public class ScoreUI : MonoBehaviour
     {
         private RectTransform _parent;
-        [SerializeField] private GameObject teamUIPrefab;
-        private float _maxWidth;
+        [SerializeField] private TeamUI teamUIPrefab;
         
-        //fakedata
-        [SerializeField] private List<TeamData> teams;
-        
+        [SerializeField] private List<TeamData> teams; //fakedata
+        private readonly List<TeamUI> _teamsUIs = new List<TeamUI>();
         public int TotalTilesPainted
         {
             get
@@ -34,6 +33,8 @@ namespace UI
                 return value;
             }
         }
+        
+        public float MaxWidth => _parent.rect.width;
 
         private void Awake()
         {
@@ -42,12 +43,25 @@ namespace UI
 
         private void Start()
         {
-            _maxWidth = _parent.rect.width;
+            foreach (TeamData team in teams)
+            {
+                TeamUI ui = Instantiate<TeamUI>(teamUIPrefab, _parent);
+                ui.Image.color = team.color;
+                ui.Rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, MaxWidth / teams.Count);
+                _teamsUIs.Add(ui);
+            }
         }
 
         private void Update()
         {
-            
+            for (int i = 0; i < _teamsUIs.Count; i++)
+            {
+                var ui = _teamsUIs[i];
+                var data = teams[i];
+
+                float percentage = data.score / (float)TotalTilesPainted;
+                ui.Rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, MaxWidth * percentage);
+            }
         }
     }
 }
