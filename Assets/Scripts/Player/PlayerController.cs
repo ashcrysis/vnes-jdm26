@@ -1,6 +1,9 @@
+using System;
 using Data;
 using Tiles;
+using UI;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
 
@@ -25,8 +28,8 @@ namespace Player
         private TileBase playerTile;
         private Rigidbody2D rb;
         private PlayerInput playerInput;
-
-        private static readonly Color[] playerColors = new Color[]
+        
+        public static readonly Color[] playerColors = new Color[]
         {
             Color.red, Color.blue, Color.green, Color.yellow
         };
@@ -52,6 +55,8 @@ namespace Player
             }
 
             playerTile = ScriptableTile.CreateTile(playerColor, floorTilemap);
+            
+            ScoreUI.Instance.OnPlayerJoined();
             animator = GetComponent<Animator>();
         }
 
