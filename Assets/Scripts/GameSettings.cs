@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,8 +8,8 @@ using UnityEngine.InputSystem;
 public class GameSettings : MonoBehaviour
 {
     public static GameSettings Instance; 
-    [SerializeField] private List<Color> colors = new List<Color>(){ Color.red, Color.blue, Color.green, Color.yellow };
-    [SerializeField] private List<Transform> spawnPoints = new List<Transform>(){ };
+    [SerializeField] private List<Color> colors = new(){ Color.red, Color.blue, Color.green, Color.yellow };
+    private readonly List<Transform> _spawnPoints = new(){ };
     
     private PlayerInputManager _manager;
 
@@ -24,6 +25,14 @@ public class GameSettings : MonoBehaviour
         
         _manager = GetComponent<PlayerInputManager>();
         
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Spawnpoint");
+        _spawnPoints.AddRange(objects.Select((a) => a.transform));
+
+        if (_spawnPoints.Count == 0)
+        {
+            Debug.LogError("No Spawnpoints found!");
+        }
+        
         Instance = this;
     }
 
@@ -34,6 +43,6 @@ public class GameSettings : MonoBehaviour
     
     public Transform GetSpawnPoint(int index)
     {
-        return spawnPoints[Math.Clamp(index, 0, spawnPoints.Count - 1)];
+        return _spawnPoints[Math.Clamp(index, 0, _spawnPoints.Count - 1)];
     }
 }

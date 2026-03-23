@@ -1,73 +1,60 @@
-using System;
 using System.Collections;
 using Data;
 using Tiles;
 using UI;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
 
 namespace Player
 {
+    [RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(Animator)), RequireComponent(typeof(PlayerInput))]
     public class PlayerController : MonoBehaviour
     {
         [Header("Movement")]
         public float moveSpeed = 5f;
-
-        [Header("Tilemap")]
-        public Tilemap floorTilemap;
-
-        [Header("Player")]
-        public Color playerColor;
-
-        [Header("Animator")]
-        public Animator animator;
-
-        private Vector2 moveInput;
-        private Vector2 lastFacedDirection = Vector2.down;
-        private TileBase playerTile;
-        private Rigidbody2D rb;
-        private PlayerInput playerInput;
-
-        private int playerIndex;
         
+        // Personal
         private bool _initialized;
+        private int _playerIndex;
+        private TileBase _playerTile;
+        
+        // Components
+        private Animator _animator;
+        private Rigidbody2D _rb;
+        private PlayerInput _playerInput;
+
+        // Movement
+        private Vector2 _moveInput;
+        private Vector2 _lastFacedDirection = Vector2.down;
+        
         
         void Awake()
         {
-            rb = GetComponent<Rigidbody2D>();
-            playerInput = GetComponent<PlayerInput>();
+            _rb = GetComponent<Rigidbody2D>();
+            _playerInput = GetComponent<PlayerInput>();
+            _animator = GetComponent<Animator>();
 
-            playerInput.actions["Move"].performed += OnMove;
-            playerInput.actions["Move"].canceled += OnMove;
+            _playerInput.actions["Move"].performed += OnMove;
+            _playerInput.actions["Move"].canceled += OnMove;
 
-            int index = Mathf.Clamp(playerInput.playerIndex, 0, GameSettings.Instance.GetMaxPlayers - 1);
+            int index = Mathf.Clamp(_playerInput.playerIndex, 0, GameSettings.Instance.GetMaxPlayers - 1);
             
-            playerIndex = index;
+            _playerIndex = index;
             
             transform.position = GameSettings.Instance.GetSpawnPoint(index).position;
-            playerColor = GameSettings.Instance.GetTeamColor(index);
-            
-            if (!floorTilemap)
-                floorTilemap = GameObject.Find("FloorTilemap")?.GetComponent<Tilemap>();
+            Color color = GameSettings.Instance.GetTeamColor(index);
 
-            if (!floorTilemap)
-            {
-                Debug.LogError("FloorTilemap não encontrado na cena!");
-                return;
-            }
-
-            playerTile = ScriptableTile.CreateTile(playerColor, floorTilemap);
+            _playerTile = ScriptableTile.CreateTile(color, TilePaintManager.Instance.PaintedTilemap);
             
             ScoreUI.Instance.OnPlayerJoined();
-            animator = GetComponent<Animator>();
             
             StartCoroutine(MarkAsInitialized());
         }
 
-        public IEnumerator MarkAsInitialized()
+        private IEnumerator MarkAsInitialized()
         {
+            // gambiarra que impede pintar chão antes de teleportar pro spawnpoint
             yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
             
@@ -76,10 +63,10 @@ namespace Player
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            moveInput = context.ReadValue<Vector2>();
-            if (moveInput.sqrMagnitude > 0.01f)
+            _moveInput = context.ReadValue<Vector2>();
+            if (_moveInput.sqrMagnitude > 0.01f)
             {
-                lastFacedDirection = moveInput;
+                _lastFacedDirection = _moveInput;
             }
         }
 
@@ -91,13 +78,11 @@ namespace Player
             }
             
             // Movimento
-            Vector2 newPos = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
-            rb.MovePosition(newPos);
+            Vector2 newPos = _rb.position + _moveInput * (moveSpeed * Time.fixedDeltaTime);
+            _rb.MovePosition(newPos);
 
             // Marca tile
-            Vector3Int cellPos = floorTilemap.WorldToCell(rb.position);
-            floorTilemap.SetTile(cellPos, playerTile);
-            TilePaintManager.Instance.PaintTile(cellPos, playerInput.playerIndex);
+            TilePaintManager.Instance.TryPaint(_rb.position, _playerTile, _playerIndex);
         }
 
         void Update()
@@ -107,23 +92,23 @@ namespace Player
 
         private void UpdateAnimator()
         {
-            if (animator == null) return;
+            if (_animator == null) return;
 
             // Clamp entre -1 e 1 (normalizado)
-            Vector2 normalized = lastFacedDirection;
+            Vector2 normalized = _lastFacedDirection;
             if (normalized.magnitude > 1f)
                 normalized.Normalize();
 
             // Passa para o Animator
-            animator.SetFloat("x", normalized.x);
-            animator.SetFloat("y", normalized.y);
-            animator.SetBool("isMoving", moveInput.sqrMagnitude > 0.01f);
+            _animator.SetFloat("x", normalized.x);
+            _animator.SetFloat("y", normalized.y);
+            _animator.SetBool("isMoving", _moveInput.sqrMagnitude > 0.01f);
             // animator.SetBool("isMoving", true);
         }
 
         public void Die()
         {
-            transform.position = GameSettings.Instance.GetSpawnPoint(playerIndex).position;
+            transform.position = GameSettings.Instance.GetSpawnPoint(_playerIndex).position;
         }
     }
 }
