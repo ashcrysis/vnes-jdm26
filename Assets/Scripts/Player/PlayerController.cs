@@ -102,6 +102,7 @@ namespace Player
             // Passa para o Animator
             _animator.SetFloat("x", normalized.x);
             _animator.SetFloat("y", normalized.y);
+            _animator.SetInteger("playerID", _playerIndex);
             _animator.SetBool("isMoving", _moveInput.sqrMagnitude > 0.01f);
             // animator.SetBool("isMoving", true);
         }
