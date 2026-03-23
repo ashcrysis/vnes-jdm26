@@ -336,7 +336,19 @@ MonoBehaviour:
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7067860294564719800}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_PlayerLeftEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7945,6 +7957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barra
       objectReference: {fileID: 0}
+    - target: {fileID: 3194838205289745529, guid: 18ad890d38da2a1418e31c0876c33830, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5391515451280950351, guid: 18ad890d38da2a1418e31c0876c33830, type: 3}
       propertyPath: m_Camera
       value: 
@@ -8038,6 +8054,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ad890d38da2a1418e31c0876c33830, type: 3}
+--- !u!1 &7067860294564719800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3194838205289745529, guid: 18ad890d38da2a1418e31c0876c33830, type: 3}
+  m_PrefabInstance: {fileID: 7067860294564719799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
